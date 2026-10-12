@@ -13,7 +13,7 @@ function(input, output, session) {
   output$data_densityplot <- renderPlot({
     ggplot(data_df(), aes(x = detection, fill = outcome)) +
       geom_density(alpha = 0.5) +
-      labs(x = "検査値", y = "頻度", color = NULL, caption = "赤は陽性，青は陰性の場合の検査値の分布") +
+      labs(x = "検査値", y = "頻度", color = NULL, caption = "赤は陽性、青は陰性の場合の検査値の分布") +
       theme(
         axis.text.x = element_text(size = 15), 
         axis.text.y = element_text(size = 15), 
@@ -78,7 +78,7 @@ function(input, output, session) {
       geom_point(data = max_point_roc, mapping = aes(x = true_negative, y = true_positive), size = 5, color = "deeppink4")+
       geom_label(data = added_text, mapping = aes(x = x, y = y, label = text), size = 8)+
       scale_x_reverse() +
-      labs(x = "特異度（Specificity）", y = "感度（Sensitivity）", color = NULL, caption = "赤丸はYoudenインデックス最大の点，青丸は左の閾値に対応する値") +
+      labs(x = "特異度（Specificity）", y = "感度（Sensitivity）", color = NULL, caption = "赤丸はYoudenインデックス最大の点、青丸は左の閾値に対応する値") +
       theme(
         axis.text.x = element_text(size = 15), 
         axis.text.y = element_text(size = 15), 
@@ -120,7 +120,7 @@ function(input, output, session) {
       geom_area(aes(x = x, y = y), color = "#F8766D", fill = "#F8766D", data = d_g_below)+
       xlim(c(min_x, max_x))+
       ylim(c(0, max_y)) +
-      labs(x = "検査値（陽性のとき）", y = "頻度", color = NULL, caption = "赤いエリアの面積は感度，白いエリアの面積はfalse-positiveの確率，縦線の位置は左の閾値で変化する") +
+      labs(x = "検査値（陽性のとき）", y = "頻度", color = NULL, caption = "赤いエリアの面積は感度、白いエリアの面積はfalse-positiveの確率、縦線の位置は左の閾値で変化する") +
       theme(
         axis.text.x = element_text(size = 15), 
         axis.text.y = element_text(size = 15), 
@@ -135,7 +135,7 @@ function(input, output, session) {
       geom_area(aes(x = x, y = y), color = "#00BFC4", fill = "#00BFC4", data = d_p_above)+
       xlim(c(min_x, max_x))+
       ylim(c(0, max_y)) +
-      labs(x = "検査値（陰性のとき）", y = "頻度", color = NULL, caption = "青いエリアの面積は特異度，白いエリアの面積はfalse-negativeの確率") +
+      labs(x = "検査値（陰性のとき）", y = "頻度", color = NULL, caption = "青いエリアの面積は特異度、白いエリアの面積はfalse-negativeの確率") +
       theme(
         axis.text.x = element_text(size = 15), 
         axis.text.y = element_text(size = 15), 

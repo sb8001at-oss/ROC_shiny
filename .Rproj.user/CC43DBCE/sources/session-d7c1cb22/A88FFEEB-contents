@@ -1,2 +1,0 @@
-setwd("../")
-shinylive::export("ROC_shiny", "site", template_params = list(title = "ROC sim"))
